@@ -13,7 +13,6 @@
     <description>Port of LevelDB to Java</description>
 
     <properties>
-        <air.main.basedir>${project.parent.basedir}</air.main.basedir>
         <shadeBase>org.iq80.leveldb.shaded</shadeBase>
     </properties>
 

@@ -24,9 +24,9 @@
         <version>0.13-SNAPSHOT</version>
     </parent>
 
-    <artifactId>leveldb-benchmark</artifactId>
-    <name>leveldb-benchmark</name>
-    <description>Port of LevelDB Benchmarks to Java</description>
+    <artifactId>leveldb-example</artifactId>
+    <name>leveldb-example</name>
+    <description>LevelDB example</description>
 
     <dependencies>
         <dependency>
@@ -36,16 +36,6 @@
         <dependency>
             <groupId>org.iq80.leveldb</groupId>
             <artifactId>leveldb</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -64,7 +54,7 @@
                         </execution>
                     </executions>
                     <configuration>
-                        <mainClass>org.iq80.leveldb.benchmark.DbBenchmark</mainClass>
+                        <mainClass>org.iq80.leveldb.example.Main</mainClass>
                     </configuration>
                 </plugin>
             </plugins>
