@@ -94,7 +94,7 @@ public class BlockTrailer
     public static BlockTrailer readBlockTrailer(Slice slice)
     {
         SliceInput sliceInput = slice.input();
-        CompressionType compressionType = CompressionType.getCompressionTypeByPersistentId(sliceInput.readUnsignedByte());
+        CompressionType compressionType = CompressionType.getCompressionType(sliceInput.readUnsignedByte());
         int crc32c = sliceInput.readInt();
         return new BlockTrailer(compressionType, crc32c);
     }
