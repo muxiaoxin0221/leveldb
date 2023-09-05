@@ -1,5 +1,7 @@
 package org.iq80.leveldb;
 
+import com.google.common.base.Preconditions;
+
 public class Range {
   private final byte[] start;
   private final byte[] limit;
@@ -13,8 +15,8 @@ public class Range {
   }
 
   public Range(byte[] start, byte[] limit) {
-    Options.checkArgNotNull(start, "start");
-    Options.checkArgNotNull(limit, "limit");
+    Preconditions.checkNotNull(start);
+    Preconditions.checkNotNull(limit);
     this.limit = limit;
     this.start = start;
   }

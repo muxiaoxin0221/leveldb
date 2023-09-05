@@ -20,3 +20,5 @@ leveldb-c
 .classpath
 .settings
 eclipse-classes
+dependency-reduced-pom.xml
+example

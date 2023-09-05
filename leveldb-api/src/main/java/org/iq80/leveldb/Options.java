@@ -1,26 +1,18 @@
 package org.iq80.leveldb;
 
+import com.google.common.base.Preconditions;
+
 public class Options {
 
   private boolean createIfMissing = true;
-  private boolean errorIfExists;
+  private boolean errorIfExists = false;
   private int writeBufferSize = 4 << 20;
-
   private int maxOpenFiles = 1000;
-
   private int blockRestartInterval = 16;
   private int blockSize = 4 * 1024;
   private CompressionType compressionType = CompressionType.SNAPPY;
   private boolean verifyChecksums = true;
-  private boolean paranoidChecks;
   private DBComparator comparator;
-  private long cacheSize;
-
-  static void checkArgNotNull(Object value, String name) {
-    if (value == null) {
-      throw new IllegalArgumentException("The " + name + " argument cannot be null");
-    }
-  }
 
   public boolean createIfMissing() {
     return createIfMissing;
@@ -81,7 +73,7 @@ public class Options {
   }
 
   public Options compressionType(CompressionType compressionType) {
-    checkArgNotNull(compressionType, "compressionType");
+    Preconditions.checkNotNull(compressionType);
     this.compressionType = compressionType;
     return this;
   }
@@ -95,30 +87,12 @@ public class Options {
     return this;
   }
 
-  public long cacheSize() {
-    return cacheSize;
-  }
-
-  public Options cacheSize(long cacheSize) {
-    this.cacheSize = cacheSize;
-    return this;
-  }
-
   public DBComparator comparator() {
     return comparator;
   }
 
   public Options comparator(DBComparator comparator) {
     this.comparator = comparator;
-    return this;
-  }
-
-  public boolean paranoidChecks() {
-    return paranoidChecks;
-  }
-
-  public Options paranoidChecks(boolean paranoidChecks) {
-    this.paranoidChecks = paranoidChecks;
     return this;
   }
 }

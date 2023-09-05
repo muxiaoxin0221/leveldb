@@ -50,8 +50,7 @@ public interface DB extends Iterable<Map.Entry<byte[], byte[]>>, Closeable {
    * Suspends any background compaction threads.  This methods
    * returns once the background compactions are suspended.
    */
-  void suspendCompactions()
-      throws InterruptedException;
+  void suspendCompactions() throws InterruptedException;
 
   /**
    * Resumes the background compaction threads.

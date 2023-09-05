@@ -9,6 +9,4 @@ public interface DBFactory {
 
   void destroy(File path, Options options) throws IOException;
 
-  void repair(File path, Options options) throws IOException;
-
 }
